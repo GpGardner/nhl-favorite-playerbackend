@@ -4,13 +4,15 @@ const mongoose = require("mongoose");
 const players = express.Router();
 const PORT = process.env.PORT || 5000;
 
-const Player = require("./player.model");
+const Player = require("./Player.model");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+
+//hard coded for now, for testing
 players.route("/").get((req, res) => {
   res.status(200).json([{
     name: "Sidney Crosby",
@@ -30,6 +32,18 @@ players.route("/").get((req, res) => {
     id: "8470594",
   }]);
 });
+
+
+//This will be the route to add a new player
+// players.route("/add").post((req, res) => {
+//   const player = new Player(req.body);
+//   player.save().then((player) => {
+//     res.status.json(player);
+//   })
+//   .catch((err) => {
+//     res.status(400).send("New Favorite Player Failed")
+//   })
+// })
 
 app.use("/players", players);
 
