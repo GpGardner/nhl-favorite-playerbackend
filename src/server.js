@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 //hard coded for now, for testing
-players.route("/").get((req, res) => {
+players.route("/favoriteplayers").get((req, res) => {
   res.status(200).json([{
     name: "Sidney Crosby",
     team: "penguins",
@@ -33,6 +33,15 @@ players.route("/").get((req, res) => {
   }]);
 });
 
+players.route("/favoriteteams").get((req,res) => {
+  res.status(200).json([{
+    name: "Penguins"
+  }, {
+    name: "Capitals"
+  }
+  ])
+})
+
 
 //This will be the route to add a new player
 // players.route("/add").post((req, res) => {
@@ -45,7 +54,7 @@ players.route("/").get((req, res) => {
 //   })
 // })
 
-app.use("/players", players);
+app.use("/api", players);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
