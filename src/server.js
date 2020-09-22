@@ -16,18 +16,22 @@ app.use(express.json());
 players.route("/favoriteplayers").get((req, res) => {
   res.status(200).json([{
     name: "Sidney Crosby",
+    teamName: "Pittsburgh Penguins",
     team: "penguins",
     id: "8471675",
   }, {
     name: "Alex Ovechkin",
+    teamName: "Washington Capitals",
     team: "capitals",
     id: "8471214",
   }, {
     name: "Andrei Vasilevskiy",
+    teamName: "Tampa Bay Lightning",
     team: "lightning",
     id: "8476883",
   }, {
     name: "Marc-Andre Fluery",
+    teamName: "Las Vegas Golden Knights",
     team: "golden_knights",
     id: "8470594",
   }]);
