@@ -39,9 +39,14 @@ players.route("/favoriteplayers").get((req, res) => {
 
 players.route("/favoriteteams").get((req,res) => {
   res.status(200).json([{
-    name: "Penguins"
+    name: "Penguins",
+    link: "penguins"
   }, {
-    name: "Capitals"
+    name: "Capitals",
+    link: "capitals"
+  }, {
+    name: "Golden Knights",
+    link: "golden_knights"
   }
   ])
 })
