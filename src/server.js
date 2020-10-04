@@ -5,6 +5,7 @@ const players = express.Router();
 const PORT = process.env.PORT || 5000;
 
 const Player = require("./Player.model");
+const Team = require("./Team.model");
 
 const app = express();
 
@@ -53,13 +54,24 @@ players.route("/favoriteteams").get((req,res) => {
 
 
 //This will be the route to add a new player
-// players.route("/add").post((req, res) => {
+// players.route("/addPlayer").post((req, res) => {
 //   const player = new Player(req.body);
 //   player.save().then((player) => {
 //     res.status.json(player);
 //   })
 //   .catch((err) => {
 //     res.status(400).send("New Favorite Player Failed")
+//   })
+// })
+
+//This will be the route to add a new player
+// players.route("/addTeam").post((req, res) => {
+//   const team = new Team(req.body);
+//   team.save().then((team) => {
+//     res.status.json(team);
+//   })
+//   .catch((err) => {
+//     res.status(400).send("New Favorite Team Failed")
 //   })
 // })
 
